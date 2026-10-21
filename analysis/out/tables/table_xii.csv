@@ -1,0 +1,13 @@
+quantity,regenerated,printed,status,note
+OpenMP 40 U=1 s,27.9,27.9,PASS,
+OpenMP 40 U=50 s,19.1,19.1,PASS,
+OpenMP 40 saving percent,31.5,31.5,PASS,
+MPI 4 U=1 s,290,290,PASS,
+MPI 4 U=50 s,196,196,PASS,
+MPI 4 saving percent,32.5,32.5,PASS,
+MPI 8 U=1 s,146,146,PASS,
+MPI 8 U=50 s,98.4,98.4,PASS,
+MPI 8 saving percent,32.8,32.8,PASS,
+CUDA U=1 s,2.01,2.01,PASS,
+CUDA U=50 s,1.54,1.54,PASS,
+CUDA saving percent,23.2,23.2,PASS,

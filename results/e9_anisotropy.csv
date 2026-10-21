@@ -1,0 +1,3 @@
+slurm_job_id,K,steps,wet_count,peak_wet_count,r_axis_cells,r_diag_cells,ratio_diag_over_axis,ratio_axis_over_diag,stop_rule,hit_boundary,extent_definition
+243813,4,125600,17765,17777,75.0,76.36753236814714,1.0182337649086286,0.9820927516479826,wet_area_stopped_growing,False,"Euclidean cell-size units: axis step 1, diagonal step sqrt(2); mean of four directions; h>0.001"
+243813,8,120800,17893,17901,76.0,74.95331880577405,0.9862278790233427,1.0139644409467472,wet_area_stopped_growing,False,"Euclidean cell-size units: axis step 1, diagonal step sqrt(2); mean of four directions; h>0.001"

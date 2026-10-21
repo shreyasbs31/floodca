@@ -1,0 +1,117 @@
+{
+  "main_N500": {
+    "010": {
+      "threshold_m": 0.1,
+      "N_first_MAD_below_0.01": 8,
+      "N_first_MAD_wet_below_0.01": 250,
+      "land_cells": 1211522,
+      "cells_P_gt_0": 116709,
+      "cells_P_ge_0.5": 71779,
+      "cells_P_eq_1": 17816,
+      "mean_P_land": 0.056823687890108464
+    },
+    "025": {
+      "threshold_m": 0.25,
+      "N_first_MAD_below_0.01": 8,
+      "N_first_MAD_wet_below_0.01": 250,
+      "land_cells": 1211522,
+      "cells_P_gt_0": 94491,
+      "cells_P_ge_0.5": 37728,
+      "cells_P_eq_1": 4000,
+      "mean_P_land": 0.03168137103577153
+    },
+    "050": {
+      "threshold_m": 0.5,
+      "N_first_MAD_below_0.01": 8,
+      "N_first_MAD_wet_below_0.01": 250,
+      "land_cells": 1211522,
+      "cells_P_gt_0": 62906,
+      "cells_P_ge_0.5": 16106,
+      "cells_P_eq_1": 879,
+      "mean_P_land": 0.014724916262354292
+    }
+  },
+  "validation_N64": {
+    "010": {
+      "threshold_m": 0.1,
+      "n_members": 64,
+      "valid_cells": 155559,
+      "observed_flooded": 766,
+      "base_rate": 0.004924176678944966,
+      "Brier": 0.004924228470487886,
+      "Brier_climatology": 0.0048999291629795005,
+      "BSS": -0.004959114040254731,
+      "ROC_AUC": 0.49997092891797434,
+      "cells_P_gt_0": 9,
+      "observed_flooded_with_P_gt_0": 0
+    },
+    "025": {
+      "threshold_m": 0.25,
+      "n_members": 64,
+      "valid_cells": 155559,
+      "observed_flooded": 766,
+      "base_rate": 0.004924176678944966,
+      "Brier": 0.004924176678944966,
+      "Brier_climatology": 0.0048999291629795005,
+      "BSS": -0.004948544184814496,
+      "ROC_AUC": 0.5,
+      "cells_P_gt_0": 0,
+      "observed_flooded_with_P_gt_0": 0
+    },
+    "050": {
+      "threshold_m": 0.5,
+      "n_members": 64,
+      "valid_cells": 155559,
+      "observed_flooded": 766,
+      "base_rate": 0.004924176678944966,
+      "Brier": 0.004924176678944966,
+      "Brier_climatology": 0.0048999291629795005,
+      "BSS": -0.004948544184814496,
+      "ROC_AUC": 0.5,
+      "cells_P_gt_0": 0,
+      "observed_flooded_with_P_gt_0": 0
+    }
+  },
+  "validation_full_event": {
+    "010": {
+      "threshold_m": 0.1,
+      "n_members": 6,
+      "valid_cells": 155559,
+      "observed_flooded": 766,
+      "base_rate": 0.004924176678944966,
+      "Brier": 0.0069603815915504725,
+      "Brier_climatology": 0.0048999291629795005,
+      "BSS": -0.4205065746946579,
+      "ROC_AUC": 0.5189244478927547,
+      "cells_P_gt_0": 437,
+      "observed_flooded_with_P_gt_0": 31
+    },
+    "025": {
+      "threshold_m": 0.25,
+      "n_members": 6,
+      "valid_cells": 155559,
+      "observed_flooded": 766,
+      "base_rate": 0.004924176678944966,
+      "Brier": 0.005640053684525557,
+      "Brier_climatology": 0.0048999291629795005,
+      "BSS": -0.1510480043544158,
+      "ROC_AUC": 0.5008330842711042,
+      "cells_P_gt_0": 148,
+      "observed_flooded_with_P_gt_0": 2
+    },
+    "050": {
+      "threshold_m": 0.5,
+      "n_members": 6,
+      "valid_cells": 155559,
+      "observed_flooded": 766,
+      "base_rate": 0.004924176678944966,
+      "Brier": 0.00504988818104742,
+      "Brier_climatology": 0.0048999291629795005,
+      "BSS": -0.030604323670820888,
+      "ROC_AUC": 0.49991601687414805,
+      "cells_P_gt_0": 26,
+      "observed_flooded_with_P_gt_0": 0
+    }
+  },
+  "note": "validation_N64 is the 24 h single-day reading. validation_full_event is the 23-day V0 forcing with each day scaled by the member lambda. n_members is the number of hmax files present, which is 64 only when that ensemble has finished."
+}

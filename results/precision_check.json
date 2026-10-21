@@ -1,0 +1,25 @@
+{
+  "scenario_id": 0,
+  "grid": "90",
+  "threads": 40,
+  "max_abs_hmax_diff_m": 0.018254622518243835,
+  "mean_abs_hmax_diff_m": 1.2199608716990213e-05,
+  "land_cells": 1211522,
+  "flooded": {
+    "0.10": {
+      "float": 64766,
+      "double": 64769,
+      "difference": -3
+    },
+    "0.25": {
+      "float": 33047,
+      "double": 33056,
+      "difference": -9
+    },
+    "0.50": {
+      "float": 13273,
+      "double": 13276,
+      "difference": -3
+    }
+  }
+}

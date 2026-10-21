@@ -1,0 +1,10 @@
+quantity,regenerated,printed,status,note
+alpha,0.5,0.5,PASS,
+depth cutoff m,0.001,0.001,PASS,
+level cutoff m,0.00001,0.00001,PASS,
+dt min s,0.01,0.01,PASS,
+dt max s,60,60,PASS,
+U,1,1,PASS,
+K,4,4,PASS,
+open boundary slope,0.001,0.001,PASS,
+g,9.81,9.81,PASS,

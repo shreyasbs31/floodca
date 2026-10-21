@@ -1,0 +1,12 @@
+name: udupi_coast
+lat_min: 13.0
+lat_max: 14.0
+lon_min: 74.5
+lon_max: 75.5
+crs: EPSG:32643
+dem_tiles:
+  - N13_00_E074_00
+  - N13_00_E075_00
+resolutions_m: [30, 90]
+buffer_deg: 0.02
+sea_elev_max: 0.5

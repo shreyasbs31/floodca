@@ -1,0 +1,8 @@
+backend,threads,ranks,neigh,halo_mode,wall_total_s
+cuda,1,1,4,,2.0114693
+cuda,1,1,8,,2.8306086
+mpi,1,4,4,minimal,289.95643
+mpi,1,4,4,sendrecv2,290.00686
+mpi,1,4,8,sendrecv2,492.97612
+omp,40,1,4,,28.233293
+omp,40,1,8,,47.884345

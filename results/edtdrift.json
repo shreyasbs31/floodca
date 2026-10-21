@@ -1,0 +1,7 @@
+{
+  "n_reuse_steps": 1960,
+  "max_reused_over_fresh": 1.0065976,
+  "p99_reused_over_fresh": 1.0059165,
+  "min_reused_over_fresh": 1.000033,
+  "p99_method": "nearest-rank ceil(0.99*n)-1, reuse steps only"
+}

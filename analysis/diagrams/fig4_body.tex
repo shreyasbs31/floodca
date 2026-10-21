@@ -1,0 +1,32 @@
+% Master-worker ensemble. One downward spine splits to the workers.
+% A dashed arrow beside it is the reply. Labels sit beside that spine,
+% clear of every arrow head.
+\begin{tikzpicture}[
+  font=\sffamily\footnotesize,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt,
+              minimum height=0.9cm, line width=0.6pt},
+  arr/.style={draw=black!80, line width=0.75pt, -{Stealth[length=2.1mm,width=1.7mm]}},
+  back/.style={draw=black!80, line width=0.75pt, dashed,
+               -{Stealth[length=2.1mm,width=1.7mm]}}
+]
+\node[box, fill=blue!8, minimum width=7.6cm] (m) at (0,0)
+  {master\\[-2pt]scenario queue};
+\node[box, fill=orange!15, minimum width=3.35cm] (w1) at (-2.05,-2.85)
+  {worker\\[-2pt]OpenMP or CUDA};
+\node[box, fill=orange!15, minimum width=3.35cm] (w2) at (2.05,-2.85)
+  {worker\\[-2pt]OpenMP or CUDA};
+\node[box, fill=green!12, minimum width=7.6cm] (r) at (0,-4.85)
+  {MPI\_Reduce of counts\\[-2pt]$P=\mathrm{counts}/N$};
+
+\coordinate (split) at (0,-1.45);
+\draw[draw=black!80, line width=0.75pt] (m.south) -- (split);
+\draw[arr] (split) -- (w1.north);
+\draw[arr] (split) -- (w2.north);
+\draw[back] ([xshift=2.4mm]split) -- ([xshift=2.4mm]m.south);
+
+\node[font=\sffamily\scriptsize, anchor=east] at (-0.16,-0.72) {task or stop};
+\node[font=\sffamily\scriptsize, anchor=west] at (0.52,-0.72) {ready or done};
+
+\draw[arr] (w1.south) -- ([xshift=-1.7cm]r.north);
+\draw[arr] (w2.south) -- ([xshift=1.7cm]r.north);
+\end{tikzpicture}

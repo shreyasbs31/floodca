@@ -1,0 +1,9 @@
+{
+  "fast_math_median_s": 28.088137,
+  "same_node_default_median_s": 28.359651,
+  "abs_rel_diff": 0.009666500843398707,
+  "within_5pct": true,
+  "rule": "E-VEC 5 percent test against the second-node default build, not the main-node median. Reported percent is (anchor/fast - 1)*100, recomputed from the stored medians. round(percent, 2) is 0.97. (anchor-fast)/anchor would print as 0.96.",
+  "ratio_anchor_over_fast": 1.0096665008433987,
+  "percent": 0.9666500843398707
+}

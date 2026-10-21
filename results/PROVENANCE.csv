@@ -1,0 +1,37 @@
+paper_item,quantity,results_file,selection,slurm_job_ids,script
+Table I datasets,bibliographic description of inputs,none,not a measured result,,prep/
+Table II parameters,defaults,config/default.yaml,alpha U K cutoffs and step clamps,,analysis/rebuild.py
+Table III land cover,Manning n and runoff C,config/landcover_params.csv,one row per WorldCover code,,analysis/rebuild.py
+Table IV hardware,host description,none,probe logs are not in the repository,,docs/ENVIRONMENT.md
+Table V scores,CSI POD FAR Bias,results/validation_compare.csv,events 2734 and 4198 at 0.10 m and 0.25 m plus the two baselines,,analysis/rebuild.py
+Table V scores,ROC area and cell counts,results/v0_diagnostics.json; results/val_4198_diagnostics.json,full valid mask,,analysis/rebuild.py
+Table VI OpenMP S,median wall and speedups,results/bench.csv,exp E4 precision float neigh 4 warmup 0 grid S,242994,analysis/rebuild.py
+Table VII OpenMP M,median wall and speedups,results/bench.csv,exp E4 precision float neigh 4 warmup 0 grid M,242994,analysis/rebuild.py
+Table VIII OpenMP L,median wall and speedups,results/bench.csv,exp E4 precision float neigh 4 warmup 0 grid L,242995;242996;242997,analysis/rebuild.py
+Table IX MPI,strong scaling on L,results/bench.csv,exp E5 grid L halo sendrecv2 warmup 0,,analysis/rebuild.py
+Table IX MPI,halo bytes,results/bench.csv,E5 sendrecv2 and E9 minimal at 4 ranks on L,,analysis/rebuild.py
+Table X crossover,best OpenMP and CUDA end to end,results/bench.csv,E4 and E7 float neigh 4 block 16x16 cub; main node when both hosts exist,242999;245085,analysis/rebuild.py
+Table XI flux,cells per thread and flux time,results/bench.csv,E7 for C grids and E4 for S M L at the printed thread count,,analysis/rebuild.py
+Table XII reuse,U=1 and U=50 walls on L,results/bench.csv,exp E8 precision float neigh 4 warmup 0,,analysis/rebuild.py
+Table XIII ensemble,scenarios per hour,results/e10_cpu.csv; results/e10_gpu100.csv,configs b5_* serial B4 B6a,243816;243817;243819,analysis/rebuild.py
+Table XIV matched,eight scenario timers,results/e10_cpu/b5_1x40.csv; results/e10_gpu100/B4.csv,scenario ids 0 to 7,243816;243817,analysis/rebuild.py
+Table XV sparse,median walls from a dry start,results/esparse_runs.csv; results/anchor_second_node.json,Esparse OpenMP on the second node; dense M1 and L40 from the anchor,244730;244727,analysis/rebuild.py
+Table XVI double precision,double over single,results/edpx_runs.csv; results/bench.csv; results/anchor_second_node.json,EDPX on the second node; singles as in the table note,244730;244727,analysis/rebuild.py
+Table XVII energy,net joules above idle,results/e11_energy.csv,exit code 0 and job 243067 only,243067,analysis/rebuild.py
+Figure 1 map,study area,missing rasters,needs 90 m DEM mask flood raster and e12 count grids; not generated,,analysis/fig_study.py
+Figure 2 pipeline,diagram,analysis/diagrams/fig2_body.tex,TikZ compiled by pdflatex,,analysis/make_all.py
+Figure 3 halo,diagram,analysis/diagrams/fig3_body.tex,TikZ compiled by pdflatex,,analysis/make_all.py
+Figure 4 master-worker,diagram,analysis/diagrams/fig4_body.tex,TikZ compiled by pdflatex,,analysis/make_all.py
+Figure 5 OpenMP,scaling plot,results/bench.csv,exp E4 same filter as plots.py,242994;242995;242996;242997,analysis/plots.py
+Figure 6 MPI,scaling plot,results/bench.csv,exp E5,analysis/plots.py
+Figure 7 CUDA,breakdown plot,results/bench.csv,exp E6,242998,analysis/plots.py
+Figure 8 crossover,time against cells,results/bench.csv,E4 E7 as in plots.py fig_f10,,analysis/plots.py
+Figure 9 reuse,time against U,results/bench.csv,exp E8; bottom bars are the constants in plots.py,,analysis/plots.py
+Figure 10 neighbourhood,K=8 over K=4,results/bench.csv,exp E9,,analysis/plots.py
+Figure 11 ensemble,scenarios per hour,results/e10_cpu.csv; results/e10_gpu100.csv,serial and b5 configs plus B4 and B6a,243816;243817;243819,analysis/plots.py
+abstract,7.37e-14 m agreement,results/e1_equivalence.csv,maximum absolute difference,,analysis/rebuild.py
+abstract,0.87 and 0.86 efficiencies,results/bench.csv,L OpenMP 40 threads over 1 thread; MPI 40 ranks over 1 rank,,analysis/rebuild.py
+abstract,13.5 1.16 3.2 2.5 2.4,results/bench.csv; results/derived_ratios.json,crossover ratio and the stored hardware ratios,,analysis/rebuild.py
+abstract,13.2 and 1.98,results/e10_cpu.csv; results/e10_gpu100.csv,605 s over the sum of eight GPU timers; B6a per hour over B4,,analysis/rebuild.py
+abstract,ROC 0.79,results/v0_diagnostics.json; results/val_4198_diagnostics.json,both events to two decimal places,,analysis/rebuild.py
+abstract,GPU time-step share of 23 percent,not in the saved columns,the isolated reduction time is not stored; device t_dt is the blocking kernel time,,analysis/rebuild.py

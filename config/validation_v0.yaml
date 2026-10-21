@@ -1,0 +1,19 @@
+# Validation scenario V0: GFD 2734 on udupi_coast (modified Tier A).
+# T_sim is 23 inclusive IMD days (2005-09-19 through 2005-10-11) x 86400 s.
+# See docs/DECISIONS.md (2026-09-15 validation event).
+dx: 90.0
+K: 4
+U: 1
+hyeto: uniform
+T_sim: 1987200.0
+h_flood: 0.25
+k_n: 1.0
+k_C: 1.0
+diag_every: 1000
+out_every: 0
+boundary: open
+grid: data/processed/udupi_coast/90
+forcing_csv: data/processed/udupi_coast/forcing_V0.csv
+out: results/v0
+exp: V0
+gfd_id: 2734

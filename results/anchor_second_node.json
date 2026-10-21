@@ -1,0 +1,17 @@
+{
+  "host": "second-node",
+  "reference": "results/p7_e4_summary.csv",
+  "rows": {
+    "L_40": {
+      "second_node_median_s": 28.359651,
+      "main_node_median_s": 28.019063,
+      "abs_rel_diff": 0.012155581362588761
+    },
+    "M_1": {
+      "second_node_median_s": 250.42862,
+      "main_node_median_s": 246.17414,
+      "abs_rel_diff": 0.01728240017412065
+    }
+  },
+  "within_3pct": true
+}

@@ -1,0 +1,41 @@
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum width=2.7cm, minimum height=1.0cm},
+  data/.style={box, fill=blue!8},
+  prep/.style={box, fill=green!10},
+  core/.style={box, fill=orange!12, minimum width=2.45cm},
+  product/.style={box, fill=purple!8},
+  arr/.style={-{Latex}, thick}
+]
+\node[data] (dem) {Copernicus DEM};
+\node[data, right=0.4cm of dem] (imd) {IMD rainfall};
+\node[data, right=0.4cm of imd] (gee) {GFD and\\WorldCover};
+
+\node[prep, below=0.55cm of imd] (py) {Python prep\\DEM, mask, n, C, rain};
+
+\node[core, below=1.05cm of py, xshift=-2.85cm] (b1) {serial};
+\node[core, right=0.22cm of b1] (b2) {OpenMP};
+\node[core, right=0.22cm of b2] (b3) {MPI};
+\node[core, below=0.22cm of b1] (b4) {CUDA};
+\node[core, right=0.22cm of b4] (b5) {MPI+OpenMP};
+\node[core, right=0.22cm of b5] (b6) {MPI+CUDA};
+\node[font=\sffamily\footnotesize, inner sep=1pt] (phys) [above=0.16cm of b2] {shared physics.h};
+
+\node[draw, dashed, inner xsep=8pt, inner ysep=5pt, fit=(phys)(b1)(b6)] (be) {};
+
+\node[prep, below=0.65cm of be] (ens) {Ensemble\\scenario queue, probability field};
+
+\node[product, below=0.6cm of ens, xshift=-2.4cm] (csv) {results CSV};
+\node[product, below=0.6cm of ens, xshift=2.4cm] (maps) {hmax, probability field};
+
+\node[product, below=0.55cm of csv] (fig) {performance figures};
+
+\draw[arr] (dem) -- (py);
+\draw[arr] (imd) -- (py);
+\draw[arr] (gee) -- (py);
+\draw[arr] (py) -- (be.north);
+\draw[arr] (be) -- (ens);
+\draw[arr] (ens) -- (csv);
+\draw[arr] (ens) -- (maps);
+\draw[arr] (csv) -- (fig);
+\end{tikzpicture}

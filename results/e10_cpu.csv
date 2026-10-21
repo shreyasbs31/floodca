@@ -1,0 +1,6 @@
+config,node_type,cpu_model,scenarios,ranks,threads,wall_s,scen_per_hour,slurm_job_id
+b5_1x40,H1,Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz,8,1,40,605.093,47.596,243816
+b5_2x20,H1,Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz,8,2,20,605.221,47.586,243819
+b5_4x10,H1,Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz,8,4,10,640.267,44.981,243819
+b5_8x5,H1,Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz,8,8,5,707.767,40.691,243819
+serial,H1,Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz,1,1,1,2469.302,1.4579,243819

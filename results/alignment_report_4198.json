@@ -1,0 +1,414 @@
+{
+  "model_grid": {
+    "crs": "EPSG:32643",
+    "x0": 445770.0,
+    "y0": 1547820.0,
+    "dx": 90.0,
+    "nrows": 1230,
+    "ncols": 1206,
+    "bounds": [
+      445770.0,
+      1437120.0,
+      554310.0,
+      1547820.0
+    ],
+    "row0_is_north": true,
+    "dem_header_matches_mask_header": true
+  },
+  "gfd_geotiff": {
+    "event_id": 4198,
+    "path": "data/raw/gee/floodca_gfd_udupi_4198.tif",
+    "crs": "EPSG:4326",
+    "bounds": [
+      74.44787917140535,
+      12.949214820582903,
+      75.55056118266207,
+      14.051896831839615
+    ],
+    "bounds_epsg32643": [
+      440114.27524653473,
+      1431519.591517315,
+      559716.5532072643,
+      1553535.5891058121
+    ],
+    "covers_model_grid": true,
+    "north_up": true,
+    "transform": [
+      0.002245788210298804,
+      0.0,
+      74.44787917140535,
+      0.0,
+      -0.002245788210298804,
+      14.051896831839615
+    ],
+    "width": 491,
+    "height": 491,
+    "res": [
+      0.002245788210298804,
+      0.002245788210298804
+    ],
+    "dtypes": [
+      "uint8",
+      "uint8"
+    ],
+    "bands": [
+      "band1",
+      "band2"
+    ],
+    "band_index_flooded": 1,
+    "band_index_perm": 2,
+    "raw_value_counts": {
+      "band1": {
+        "0": 237875,
+        "1": 3206
+      },
+      "band2": {
+        "0": 237226,
+        "1": 3855
+      }
+    }
+  },
+  "stored_perm90_equals_fresh_reproject": null,
+  "stored_flood90_equals_fresh_reproject": null,
+  "mask90_equals_fixed_3x3_majority_of_30m": true,
+  "shapes": {
+    "dem": [
+      1230,
+      1206
+    ],
+    "perm90": null,
+    "flood90": null,
+    "hmax": [
+      1230,
+      1206
+    ],
+    "transpose_would_match": false
+  },
+  "hmax_header": {
+    "path": "results/val_4198/hmax.bin",
+    "dtype": "float64",
+    "created": "2026-10-09T04:12:05Z",
+    "nrows": 1230,
+    "ncols": 1206
+  },
+  "reprojected_value_counts": {
+    "perm": {
+      "0": 1459265,
+      "1": 24115
+    },
+    "flooded": {
+      "0": 1466515,
+      "1": 16865
+    }
+  },
+  "overlap_unshifted": {
+    "perm_cells": 24115,
+    "perm_on_sea": 8705,
+    "frac_perm_on_sea": 0.3609786439975119,
+    "frac_sea_that_is_perm": 0.03202039299928639,
+    "jaccard_perm_sea": 0.030302713842126516
+  },
+  "overlap_flood_vs_sea": {
+    "perm_cells": 16865,
+    "perm_on_sea": 5046,
+    "frac_perm_on_sea": 0.29919952564482655,
+    "frac_sea_that_is_perm": 0.018561160605904552,
+    "jaccard_perm_sea": 0.017787836165780096
+  },
+  "overlap_flipud": {
+    "perm_cells": 24115,
+    "perm_on_sea": 6315,
+    "frac_perm_on_sea": 0.2618702052664317,
+    "frac_sea_that_is_perm": 0.023229038689315747,
+    "jaccard_perm_sea": 0.021801572889407508
+  },
+  "overlap_fliplr": {
+    "perm_cells": 24115,
+    "perm_on_sea": 500,
+    "frac_perm_on_sea": 0.02073398299813394,
+    "frac_sea_that_is_perm": 0.0018391954623369552,
+    "jaccard_perm_sea": 0.0016922019947677115
+  },
+  "integer_shifts": {
+    "row-2_col-2": {
+      "perm_cells": 24090,
+      "perm_on_sea": 6698,
+      "frac_perm_on_sea": 0.27804068078040683,
+      "frac_sea_that_is_perm": 0.024637862413465852,
+      "jaccard_perm_sea": 0.023156439066551425
+    },
+    "row-2_col-1": {
+      "perm_cells": 24096,
+      "perm_on_sea": 7938,
+      "frac_perm_on_sea": 0.32943227091633465,
+      "frac_sea_that_is_perm": 0.029199067160061504,
+      "jaccard_perm_sea": 0.027560968835064717
+    },
+    "row-2_col+0": {
+      "perm_cells": 24102,
+      "perm_on_sea": 8941,
+      "frac_perm_on_sea": 0.3709650651398224,
+      "frac_sea_that_is_perm": 0.032888493257509435,
+      "jaccard_perm_sea": 0.031151247826798924
+    },
+    "row-2_col+1": {
+      "perm_cells": 24102,
+      "perm_on_sea": 9516,
+      "frac_perm_on_sea": 0.3948220064724919,
+      "frac_sea_that_is_perm": 0.035003568039196936,
+      "jaccard_perm_sea": 0.03322115317479158
+    },
+    "row-2_col+2": {
+      "perm_cells": 24102,
+      "perm_on_sea": 9705,
+      "frac_perm_on_sea": 0.40266367936270847,
+      "frac_sea_that_is_perm": 0.0356987839239603,
+      "jaccard_perm_sea": 0.03390333793296187
+    },
+    "row-1_col-2": {
+      "perm_cells": 24095,
+      "perm_on_sea": 6493,
+      "frac_perm_on_sea": 0.2694749948122017,
+      "frac_sea_that_is_perm": 0.023883792273907703,
+      "jaccard_perm_sea": 0.02243142403095419
+    },
+    "row-1_col-1": {
+      "perm_cells": 24101,
+      "perm_on_sea": 7809,
+      "frac_perm_on_sea": 0.324011451806979,
+      "frac_sea_that_is_perm": 0.02872455473077857,
+      "jaccard_perm_sea": 0.027100468505986467
+    },
+    "row-1_col+0": {
+      "perm_cells": 24107,
+      "perm_on_sea": 8904,
+      "frac_perm_on_sea": 0.36935329987140664,
+      "frac_sea_that_is_perm": 0.0327523927932965,
+      "jaccard_perm_sea": 0.031017797610960737
+    },
+    "row-1_col+1": {
+      "perm_cells": 24107,
+      "perm_on_sea": 9563,
+      "frac_perm_on_sea": 0.39668975816152985,
+      "frac_sea_that_is_perm": 0.03517645241265661,
+      "jaccard_perm_sea": 0.03339012995719304
+    },
+    "row-1_col+2": {
+      "perm_cells": 24107,
+      "perm_on_sea": 9778,
+      "frac_perm_on_sea": 0.40560832953084164,
+      "frac_sea_that_is_perm": 0.0359673064614615,
+      "jaccard_perm_sea": 0.03416647157278283
+    },
+    "row+0_col-2": {
+      "perm_cells": 24103,
+      "perm_on_sea": 6215,
+      "frac_perm_on_sea": 0.2578517197029415,
+      "frac_sea_that_is_perm": 0.022861199596848354,
+      "jaccard_perm_sea": 0.021449821567855985
+    },
+    "row+0_col-1": {
+      "perm_cells": 24109,
+      "perm_on_sea": 7543,
+      "frac_perm_on_sea": 0.3128707121821726,
+      "frac_sea_that_is_perm": 0.02774610274481531,
+      "jaccard_perm_sea": 0.026152469974759382
+    },
+    "row+0_col+0": {
+      "perm_cells": 24115,
+      "perm_on_sea": 8705,
+      "frac_perm_on_sea": 0.3609786439975119,
+      "frac_sea_that_is_perm": 0.03202039299928639,
+      "jaccard_perm_sea": 0.030302713842126516
+    },
+    "row+0_col+1": {
+      "perm_cells": 24115,
+      "perm_on_sea": 9458,
+      "frac_perm_on_sea": 0.39220402239270163,
+      "frac_sea_that_is_perm": 0.034790221365565845,
+      "jaccard_perm_sea": 0.03301048810707991
+    },
+    "row+0_col+2": {
+      "perm_cells": 24115,
+      "perm_on_sea": 9743,
+      "frac_perm_on_sea": 0.404022392701638,
+      "frac_sea_that_is_perm": 0.03583856277909791,
+      "jaccard_perm_sea": 0.03403905949760682
+    },
+    "row+1_col-2": {
+      "perm_cells": 24037,
+      "perm_on_sea": 5836,
+      "frac_perm_on_sea": 0.24279236177559596,
+      "frac_sea_that_is_perm": 0.02146708943639694,
+      "jaccard_perm_sea": 0.02012004454266201
+    },
+    "row+1_col-1": {
+      "perm_cells": 24043,
+      "perm_on_sea": 7147,
+      "frac_perm_on_sea": 0.2972590774861706,
+      "frac_sea_that_is_perm": 0.02628945993864444,
+      "jaccard_perm_sea": 0.024751172278132942
+    },
+    "row+1_col+0": {
+      "perm_cells": 24049,
+      "perm_on_sea": 8353,
+      "frac_perm_on_sea": 0.34733252941910264,
+      "frac_sea_that_is_perm": 0.030725599393801175,
+      "jaccard_perm_sea": 0.029048456985470556
+    },
+    "row+1_col+1": {
+      "perm_cells": 24049,
+      "perm_on_sea": 9204,
+      "frac_perm_on_sea": 0.38271861615867603,
+      "frac_sea_that_is_perm": 0.03385591007069867,
+      "jaccard_perm_sea": 0.03210290788725615
+    },
+    "row+1_col+2": {
+      "perm_cells": 24049,
+      "perm_on_sea": 9587,
+      "frac_perm_on_sea": 0.3986444342800116,
+      "frac_sea_that_is_perm": 0.035264733794848784,
+      "jaccard_perm_sea": 0.03348351494830958
+    },
+    "row+2_col-2": {
+      "perm_cells": 23955,
+      "perm_on_sea": 5426,
+      "frac_perm_on_sea": 0.22650803590064705,
+      "frac_sea_that_is_perm": 0.01995894915728064,
+      "jaccard_perm_sea": 0.018685409470809645
+    },
+    "row+2_col-1": {
+      "perm_cells": 23961,
+      "perm_on_sea": 6680,
+      "frac_perm_on_sea": 0.278786361170235,
+      "frac_sea_that_is_perm": 0.024571651376821723,
+      "jaccard_perm_sea": 0.02310307499161303
+    },
+    "row+2_col+0": {
+      "perm_cells": 23967,
+      "perm_on_sea": 7895,
+      "frac_perm_on_sea": 0.32941127383485624,
+      "frac_sea_that_is_perm": 0.029040896350300525,
+      "jaccard_perm_sea": 0.027419858993505367
+    },
+    "row+2_col+1": {
+      "perm_cells": 23967,
+      "perm_on_sea": 8826,
+      "frac_perm_on_sea": 0.3682563524846664,
+      "frac_sea_that_is_perm": 0.032465478301171934,
+      "jaccard_perm_sea": 0.030752720392753983
+    },
+    "row+2_col+2": {
+      "perm_cells": 23967,
+      "perm_on_sea": 9321,
+      "frac_perm_on_sea": 0.3889097509074978,
+      "frac_sea_that_is_perm": 0.03428628180888552,
+      "jaccard_perm_sea": 0.032533577192639544
+    }
+  },
+  "best_integer_shift_by_jaccard": {
+    "drow": -1,
+    "dcol": 2,
+    "jaccard": 0.03416647157278283
+  },
+  "half_pixel_and_one_cell_origin_shifts": {
+    "zero": {
+      "perm_cells": 24115,
+      "perm_on_sea": 8705,
+      "frac_perm_on_sea": 0.3609786439975119,
+      "frac_sea_that_is_perm": 0.03202039299928639,
+      "jaccard_perm_sea": 0.030302713842126516
+    },
+    "east_45m": {
+      "perm_cells": 24061,
+      "perm_on_sea": 9198,
+      "frac_perm_on_sea": 0.38227837579485474,
+      "frac_sea_that_is_perm": 0.03383383972515063,
+      "jaccard_perm_sea": 0.032079966238957036
+    },
+    "west_45m": {
+      "perm_cells": 24056,
+      "perm_on_sea": 8232,
+      "frac_perm_on_sea": 0.3422015297638843,
+      "frac_sea_that_is_perm": 0.030280514091915633,
+      "jaccard_perm_sea": 0.028614928984086595
+    },
+    "north_45m": {
+      "perm_cells": 24027,
+      "perm_on_sea": 8880,
+      "frac_perm_on_sea": 0.3695842177550256,
+      "frac_sea_that_is_perm": 0.03266411141110433,
+      "jaccard_perm_sea": 0.030940227522168604
+    },
+    "south_45m": {
+      "perm_cells": 23968,
+      "perm_on_sea": 8592,
+      "frac_perm_on_sea": 0.35847797062750336,
+      "frac_sea_that_is_perm": 0.03160473482479824,
+      "jaccard_perm_sea": 0.02991289332042864
+    },
+    "east_90m": {
+      "perm_cells": 24118,
+      "perm_on_sea": 9458,
+      "frac_perm_on_sea": 0.39215523675263286,
+      "frac_sea_that_is_perm": 0.034790221365565845,
+      "jaccard_perm_sea": 0.03301014246923405
+    },
+    "north_90m": {
+      "perm_cells": 24174,
+      "perm_on_sea": 8909,
+      "frac_perm_on_sea": 0.3685364441135104,
+      "frac_sea_that_is_perm": 0.03277078474791987,
+      "jaccard_perm_sea": 0.031028513912156115
+    }
+  },
+  "elevation_of_permanent_water": {
+    "all_perm": {
+      "n": 24115,
+      "min": -0.00761471688747406,
+      "p10": 0.0,
+      "median": 5.34454870223999,
+      "p90": 593.0,
+      "max": 930.763671875,
+      "frac_z_eq_0": 0.2724030686294837,
+      "frac_z_lt_5": 0.4931785195936139,
+      "frac_z_lt_10": 0.5639643375492432
+    },
+    "perm_on_sea": {
+      "n": 8705,
+      "min": -0.00761471688747406,
+      "p10": 0.0,
+      "median": 0.0,
+      "p90": 0.5,
+      "max": 5.018331527709961,
+      "frac_z_eq_0": 0.7546237794371051,
+      "frac_z_lt_5": 0.9998851234922458,
+      "frac_z_lt_10": 1.0
+    },
+    "perm_on_land": {
+      "n": 15410,
+      "min": 0.27588292956352234,
+      "p10": 2.1524193048477174,
+      "median": 557.0,
+      "p90": 593.0,
+      "max": 930.763671875,
+      "frac_z_eq_0": 0.0,
+      "frac_z_lt_5": 0.20694354315379623,
+      "frac_z_lt_10": 0.31765087605451003
+    }
+  },
+  "observed_flood_on_land": {
+    "n": 5377,
+    "min": 0.6989468336105347,
+    "p10": 557.0,
+    "median": 557.0,
+    "p90": 593.0,
+    "max": 664.976318359375,
+    "frac_z_eq_0": 0.0,
+    "frac_z_lt_5": 0.006137251255346848,
+    "frac_z_lt_10": 0.009112888227636229
+  },
+  "binary_01": true,
+  "band_order_suspect": false,
+  "georef_ok": true
+}

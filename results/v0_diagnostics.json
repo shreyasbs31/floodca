@@ -1,0 +1,10 @@
+{
+  "event_id": 2734,
+  "label": "V0",
+  "hmax_run": "results/v0_smoke/hmax.bin",
+  "score": "area-weighted mean of hmax over 90 m LAND cells in each 250 m cell",
+  "ROC_AUC": 0.7938645097649908,
+  "n_valid": 155559,
+  "n_observed_flood_valid": 766,
+  "zone_rule": "within 0.5 km of permanent water, else z < 10 m, else higher ground"
+}

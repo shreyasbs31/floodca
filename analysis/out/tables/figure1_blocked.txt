@@ -1,0 +1,1 @@
+Figure 1 is not regenerated. It needs the 90 m DEM, the land mask, the observed flood raster and results/e12 count rasters. Those files are not in this repository, and this script does not download them.

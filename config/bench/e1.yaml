@@ -1,0 +1,6 @@
+exp_id: E1
+grid: M
+precision: double
+fma: false
+steps: 1000
+backends: [serial, omp, mpi, cuda]

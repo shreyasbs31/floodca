@@ -1,0 +1,10 @@
+{
+  "hmax_land_max_m": 16.524314404249996,
+  "hmax_land_p99_m": 0.5714140435619164,
+  "hmax_land_p999_m": 1.6481733308445898,
+  "n_land_hmax_ge_0.05": 77496,
+  "n_land_hmax_ge_0.10": 61453,
+  "n_land_hmax_ge_0.25": 36068,
+  "n_land_hmax_ge_0.50": 15168,
+  "n_land_hmax_ge_1.00": 3826
+}

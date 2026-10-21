@@ -1,0 +1,15 @@
+quantity,regenerated,printed,status,note
+two GPUs over one,1.98,1.98,PASS,
+double precision agreement m,7.37e-14,7.37e-14,PASS,
+L active cells millions,4.2,4.2,PASS,
+OpenMP self-relative efficiency at 40,0.87,0.87,PASS,
+MPI efficiency at 40,0.86,0.86,PASS,
+bandwidth ratio,3.2,3.2,PASS,
+FP32 ratio,2.5,2.5,PASS,
+FP64 ratio,2.4,2.4,PASS,
+kernel step at 1024 cells us,42,42,PASS,
+lead at 1024 cells,1.16,1.16,PASS,
+V100 over best OpenMP,13.5,13.5,PASS,
+ROC area event 2734 to 2 decimals,0.79,0.79,PASS,
+ROC area event 4198 to 2 decimals,0.79,0.79,PASS,
+GPU time-step share percent,MISSING,23,FAIL,isolated reduction time is not a column in the saved results

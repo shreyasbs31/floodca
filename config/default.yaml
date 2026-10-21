@@ -1,0 +1,25 @@
+# FloodCA default parameters (SPEC Sec 5.1)
+dx: 30.0
+g: 9.81
+alpha: 0.5
+tau_h: 1.0e-3
+tau_l: 1.0e-5
+z_sea: 0.0
+dt_max: 60.0
+dt_min: 0.01
+U: 1
+K: 4
+neigh: 4
+S_bnd: 0.001
+h_flood: 0.25
+T_sim: 86400.0
+out_every: 0
+diag_every: 100
+hyeto: triangle
+D_h: 24.0
+phi: 0.5
+lambda: 1.0
+k_n: 1.0
+k_C: 1.0
+boundary: open
+steps: 0

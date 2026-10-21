@@ -1,0 +1,65 @@
+{
+  "setup": {
+    "n": 1024,
+    "z_m": 10.0,
+    "block": "5x5",
+    "h0_m": 1.0,
+    "thresh_m": 0.001,
+    "dx_m": 90.0,
+    "boundary": "closed",
+    "rain": "none",
+    "stop_rule": "wet cell count sets no new maximum for 3 chunks of 400 steps",
+    "ratio_reported": "r_diag/r_axis (1.0 isotropic); ratio_axis_over_diag is SPEC 10.4",
+    "note": "Initial column instead of the SPEC 10.4 point source. Physics unchanged. A 40 percent wet target is unreachable at this volume."
+  },
+  "runs": [
+    {
+      "wet_count": 17765,
+      "wet_frac": 0.01694202423095703,
+      "r_axis_cells": 75.0,
+      "r_diag_cells": 76.36753236814714,
+      "ratio_diag_over_axis": 1.0182337649086286,
+      "ratio_axis_over_diag": 0.9820927516479826,
+      "hit_boundary": false,
+      "directions_cells": {
+        "east": 75.0,
+        "west": 75.0,
+        "south": 75.0,
+        "north": 75.0,
+        "se": 76.36753236814714,
+        "sw": 76.36753236814714,
+        "ne": 76.36753236814714,
+        "nw": 76.36753236814714
+      },
+      "steps": 125600,
+      "sim_time_s": 24000.0,
+      "K": 4,
+      "stop_rule": "wet_area_stopped_growing",
+      "peak_wet_count": 17777
+    },
+    {
+      "wet_count": 17893,
+      "wet_frac": 0.01706409454345703,
+      "r_axis_cells": 76.0,
+      "r_diag_cells": 74.95331880577405,
+      "ratio_diag_over_axis": 0.9862278790233427,
+      "ratio_axis_over_diag": 1.0139644409467472,
+      "hit_boundary": false,
+      "directions_cells": {
+        "east": 76.0,
+        "west": 76.0,
+        "south": 76.0,
+        "north": 76.0,
+        "se": 74.95331880577405,
+        "sw": 74.95331880577405,
+        "ne": 74.95331880577405,
+        "nw": 74.95331880577405
+      },
+      "steps": 120800,
+      "sim_time_s": 24000.0,
+      "K": 8,
+      "stop_rule": "wet_area_stopped_growing",
+      "peak_wet_count": 17901
+    }
+  ]
+}

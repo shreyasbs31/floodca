@@ -1,0 +1,40 @@
+% One rank of a 2D Cartesian split. Ghosts are one cell wide.
+% Phase 1 exchanges east and west columns of owned rows.
+% Phase 2 exchanges north and south rows across the full width, so the four corners arrive with no third message.
+\begin{tikzpicture}[
+  font=\sffamily\scriptsize,
+  cell/.style={draw, minimum size=0.42cm, inner sep=0pt},
+  owned/.style={cell, fill=white},
+  ghost/.style={cell, fill=black!8},
+  corner/.style={cell, fill=orange!35},
+  arr/.style={-{Latex}, thick}
+]
+\foreach \r in {0,1,2,3} {
+  \foreach \c in {0,1,2,3} {
+    \node[owned] at (\c*0.42, -\r*0.42) {};
+  }
+}
+\foreach \r in {0,1,2,3} {
+  \node[ghost] at (-0.42, -\r*0.42) {};
+  \node[ghost] at (1.68, -\r*0.42) {};
+}
+\foreach \c in {0,1,2,3} {
+  \node[ghost] at (\c*0.42, 0.42) {};
+  \node[ghost] at (\c*0.42, -1.68) {};
+}
+\node[corner] at (-0.42, 0.42) {};
+\node[corner] at (1.68, 0.42) {};
+\node[corner] at (-0.42, -1.68) {};
+\node[corner] at (1.68, -1.68) {};
+\node[font=\sffamily\small] at (0.63, 1.15) {north};
+\node[font=\sffamily\small] at (0.63, -2.35) {south};
+\node[font=\sffamily\small, rotate=90] at (-1.15, -0.63) {west};
+\node[font=\sffamily\small, rotate=90] at (2.4, -0.63) {east};
+\draw[arr, blue!70!black] (-0.85, -0.63) -- (-0.15, -0.63);
+\draw[arr, blue!70!black] (2.05, -0.63) -- (1.4, -0.63);
+\node[blue!70!black, font=\sffamily\scriptsize, align=center] at (0.63, -3.05) {phase 1: east and west columns};
+\draw[arr, orange!80!black] (0.63, 0.95) -- (0.63, 0.25);
+\draw[arr, orange!80!black] (0.63, -2.15) -- (0.63, -1.45);
+\node[orange!80!black, font=\sffamily\scriptsize, align=center] at (0.63, -3.55) {phase 2: full rows, corners included};
+\node[font=\sffamily\scriptsize, align=left] at (4.3, -0.2) {white: owned\\gray: edge ghost\\orange: corner ghost};
+\end{tikzpicture}

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use FloodCA, please cite this paper."
+title: "OpenMP, MPI and CUDA on One Cellular Automata Flood Kernel: Scaling, Time-Step Cost and Ensemble Throughput"
+type: software
+authors:
+  - given-names: Shreyas
+    family-names: B S
+    email: shreyas5.mitmpl2024@learner.manipal.edu
+    affiliation: "Department of Computer Science and Engineering, Manipal Institute of Technology, Manipal Academy of Higher Education"
+  - given-names: Varun
+    family-names: Singh
+    email: varun2.mitmpl2024@learner.manipal.edu
+    affiliation: "Department of Computer Science and Engineering, Manipal Institute of Technology, Manipal Academy of Higher Education"
+  - given-names: Vishrut Anand
+    family-names: Ojha
+    email: vishrut.mitmpl2024@learner.manipal.edu
+    affiliation: "Department of Computer Science and Engineering, Manipal Institute of Technology, Manipal Academy of Higher Education"
+  - given-names: Sandhya
+    family-names: Dubey
+    email: sandhya.dubey@manipal.edu
+    affiliation: "Department of Computer Science and Engineering, Manipal Institute of Technology, Manipal Academy of Higher Education"
+license: MIT
+year: 2026
