@@ -12,4 +12,4 @@ lead at 1024 cells,1.16,1.16,PASS,
 V100 over best OpenMP,13.5,13.5,PASS,
 ROC area event 2734 to 2 decimals,0.79,0.79,PASS,
 ROC area event 4198 to 2 decimals,0.79,0.79,PASS,
-GPU time-step share percent,MISSING,23,FAIL,isolated reduction time is not a column in the saved results
+GPU time-step share percent,23,23,PASS,

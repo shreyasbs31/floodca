@@ -34,7 +34,7 @@ python analysis/make_all.py
 python analysis/check_numbers.py
 ```
 
-`make_all.py` writes every table to `analysis/out/tables/` as a CSV and a LaTeX snippet, and writes figures 2 to 11 as vector PDFs under `figures/`. Figure 1 is listed and is not drawn. `check_numbers.py` reprints each paper value, rounds the regenerated number the way that value is printed, and prints PASS or FAIL. It does not change `results/` or `analysis/expected_values.csv`.
+`make_all.py` writes every table to `analysis/out/tables/` as a CSV and a LaTeX snippet, and writes figures 2 to 11 as vector PDFs under `figures/`. Figure 1 is `analysis/fig_study.py`. It reads the rasters that `prep/` writes, and those downloads are not in this repository, so `make_all.py` does not run it. `check_numbers.py` reprints each paper value, rounds the regenerated number the way that value is printed, and prints PASS or FAIL. It does not change `results/` or `analysis/expected_values.csv`. Two headline values, the Table XIII serial wall and the Table XVII OpenMP CPU energy, are compared at three significant figures, which is the rounding the paper states for headline numbers in the text.
 
 ## Build the code
 
@@ -93,7 +93,7 @@ The rasters are not in this repository. `prep/` is what fetches them, and `data/
 | Table XV, sparse start | `results/esparse_runs.csv`, `results/anchor_second_node.json` | `analysis/rebuild.py` |
 | Table XVI, double precision | `results/edpx_runs.csv`, `results/bench.csv`, `results/anchor_second_node.json` | `analysis/rebuild.py` |
 | Table XVII, energy | `results/e11_energy.csv` | `analysis/rebuild.py` |
-| Figure 1, map | blocked: DEM, mask, flood raster and count grids are absent | `analysis/fig_study.py` (not run) |
+| Figure 1, map | `data/processed/udupi_coast` (90 m elevation, land mask, crop headers, event 2734 flood and permanent water) and `results/e12/main` count chunks. These downloads are not in the repository. | `analysis/fig_study.py` (not run) |
 | Figure 2, pipeline | TikZ in `analysis/diagrams/fig2_body.tex` | `analysis/make_all.py` |
 | Figure 3, halo | `analysis/diagrams/fig3_body.tex` | `analysis/make_all.py` |
 | Figure 4, master-worker | `analysis/diagrams/fig4_body.tex` | `analysis/make_all.py` |

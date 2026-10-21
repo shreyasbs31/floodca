@@ -114,6 +114,32 @@ LAND = [
 ]
 
 
+# The paper states that headline numbers in the text are rounded to three
+# significant figures. Only these two printed values use that rounding.
+# Every other comparison still uses the decimal places of the printed string.
+SIG3 = {
+    ("Table XIII", "serial wall_s"),
+    ("Table XVII", "OpenMP CPU J"),
+}
+
+
+def fmt_sig3(raw, expected: str) -> str:
+    """Round to three significant figures, then match the printed commas."""
+    import math
+    value = Decimal(str(raw))
+    if value == 0:
+        rounded = Decimal(0)
+    else:
+        exp = math.floor(math.log10(abs(float(raw))))
+        quantum = Decimal(f"1e{exp - 2}")
+        rounded = value.quantize(quantum, rounding=ROUND_HALF_UP)
+    if "," in expected:
+        return f"{int(rounded):,}"
+    if "." in str(rounded):
+        return format(rounded, "f")
+    return str(int(rounded))
+
+
 def fmt_like(raw, expected: str) -> str:
     """Round raw to the decimal places of the printed string."""
     want_comma = "," in expected
@@ -711,10 +737,19 @@ def _abstract(out: Checks):
     diag2 = _json("val_4198_diagnostics.json")
     out.add("abstract", "ROC area event 2734 to 2 decimals", "0.79", diag["ROC_AUC"])
     out.add("abstract", "ROC area event 4198 to 2 decimals", "0.79", diag2["ROC_AUC"])
-    # The isolated GPU reduction (0.481 s of 2.056 s, 23.4 percent) is not a
-    # column in the saved timers. The device t_dt column includes the wait.
-    out.add("abstract", "GPU time-step share percent", "23", None,
-            "isolated reduction time is not a column in the saved results")
+    # Isolated reduction on grid L: one timed repeat after warmup, CUDA events.
+    # results/cuda_reduction_l.csv is those two bench rows (job 242998).
+    red = [
+        row for row in _load_csv(RES / "cuda_reduction_l.csv")
+        if row["warmup"] == "0"
+    ]
+    red_wall = statistics.median(float(row["wall_total_s"]) for row in red)
+    red_dt = statistics.median(float(row["t_dt_s"]) for row in red)
+    red_share = 100.0 * red_dt / red_wall
+    out.add("abstract", "GPU time-step share percent", "23", red_share)
+    out.add("prose", "GPU isolated reduction s", "0.481", red_dt)
+    out.add("prose", "GPU isolated reduction wall s", "2.056", red_wall)
+    out.add("prose", "GPU isolated reduction share percent", "23.4", red_share)
     dt = e4("L", "omp", 40, "t_dt_s")
     out.add("prose", "OpenMP time-step share percent", "32.1",
             None if dt is None or not l40 else 100.0 * dt / l40)
@@ -841,7 +876,8 @@ def evaluate():
             got = "MISSING"
             status = "FAIL"
         else:
-            got = fmt_like(row["raw"], row["expected"])
+            show = fmt_sig3 if (row["paper_item"], row["quantity"]) in SIG3 else fmt_like
+            got = show(row["raw"], row["expected"])
             status = "PASS" if got == row["expected"] else "FAIL"
         results.append({**row, "got": got, "status": status})
     return results

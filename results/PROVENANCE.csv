@@ -34,4 +34,4 @@ abstract,0.87 and 0.86 efficiencies,results/bench.csv,L OpenMP 40 threads over 1
 abstract,13.5 1.16 3.2 2.5 2.4,results/bench.csv; results/derived_ratios.json,crossover ratio and the stored hardware ratios,,analysis/rebuild.py
 abstract,13.2 and 1.98,results/e10_cpu.csv; results/e10_gpu100.csv,605 s over the sum of eight GPU timers; B6a per hour over B4,,analysis/rebuild.py
 abstract,ROC 0.79,results/v0_diagnostics.json; results/val_4198_diagnostics.json,both events to two decimal places,,analysis/rebuild.py
-abstract,GPU time-step share of 23 percent,not in the saved columns,the isolated reduction time is not stored; device t_dt is the blocking kernel time,,analysis/rebuild.py
+abstract,GPU time-step share of 23 percent,results/cuda_reduction_l.csv,E6t grid L CUDA 16x16 cub float warmup 0; share is 100 * t_dt_s / wall_total_s; prints 0.481 s of 2.056 s and 23.4 percent,242998,analysis/rebuild.py

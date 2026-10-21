@@ -1,13 +1,20 @@
-"""Study-area figure: DEM with benchmark crops, probability at 0.10 m, GFD 2734.
+"""Study-area figure: elevation, ensemble probability, observed extent.
 
-Panel (a) is the 90 m DEM. S, M and L are crops of the 30 m grid drawn on that extent.
+Panel (a) is the 90 m elevation. S, M and L are crops of the 30 m grid drawn on that extent.
 Panel (b) is the 500-member probability at 0.10 m, summed from the stored count chunks.
-Panel (c) is the GFD 2734 extent with permanent water removed.
+Panel (c) is the observed flood extent for event 2734 with permanent water removed.
+
+Reads the rasters that prep/ writes under data/processed/udupi_coast, plus the
+count chunks in results/e12/main. Those downloads are not in this repository.
 """
 from __future__ import annotations
 
 import os
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "prep"))
 
 os.environ.setdefault("MPLBACKEND", "Agg")
 _mpl = os.environ.get("MPLCONFIGDIR") or os.path.join(
@@ -38,7 +45,7 @@ def _extent(hdr):
 
 
 def main() -> int:
-    proc = Path("data/processed/udupi_coast")
+    proc = ROOT / "data" / "processed" / "udupi_coast"
     dem, dh = read_bin(proc / "90" / "dem.bin")
     mask, _ = read_bin(proc / "90" / "mask.bin")
     flood, _ = read_bin(proc / "validation" / "gfd_2734_flooded_90.bin")
@@ -46,7 +53,7 @@ def main() -> int:
     ext = _extent(dh)
     counts = np.zeros(dem.size, dtype=np.int64)
     for first, n in CHUNKS:
-        path = Path(f"results/e12/main/chunk_{first:03d}_{n:03d}/count_010.bin")
+        path = ROOT / "results" / "e12" / "main" / f"chunk_{first:03d}_{n:03d}" / "count_010.bin"
         counts += np.fromfile(path, dtype=np.uint16).astype(np.int64)
     prob = (counts / 500.0).reshape(dem.shape)
     land = mask == 0
@@ -163,7 +170,7 @@ def main() -> int:
         ax.tick_params(labelsize=7)
         ax.text(0.02, 0.98, f"({letter})", transform=ax.transAxes, va="top", ha="left",
                 fontsize=8, zorder=6)
-    out = Path("paper/shared/figures/F1_study_area.png")
+    out = ROOT / "figures" / "fig1.png"
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=150)
     print("F1 written", out)

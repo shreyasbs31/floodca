@@ -1,0 +1,3 @@
+exp_id,grid_name,backend,precision,neigh,U,block,reduce_impl,warmup,repeat_idx,steps,wall_total_s,t_dt_s,slurm_job_id,notes
+E6t,grid_L,cuda,float,4,1,16x16,cub,1,0,2000,2.0545474,0.47921923,242998,cuda_event_timing
+E6t,grid_L,cuda,float,4,1,16x16,cub,0,1,2000,2.0559572,0.48064653,242998,cuda_event_timing

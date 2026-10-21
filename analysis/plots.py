@@ -255,14 +255,9 @@ def fig_f10(df: pd.DataFrame, figdir: Path, resdir: Path, title_note: str = "") 
         ("serial_s", "serial", SERIES_COLOR["serial"]),
         ("best_omp_s", "best OpenMP", SERIES_COLOR["omp"]),
         ("cuda_e2e_s", "CUDA end-to-end", SERIES_COLOR["cuda_e2e"]),
-        ("cuda_kernel_s", "CUDA kernel only", SERIES_COLOR["cuda_kernel"]),
     )
-    styles = {
-        "cuda_kernel_s": dict(marker="s", ls="--", markersize=5),
-    }
     for col, lab, color in series:
-        kw = styles.get(col, dict(marker="o", ls="-"))
-        ax.loglog(x, t[col], label=lab, color=color, **kw)
+        ax.loglog(x, t[col], label=lab, color=color, marker="o", ls="-")
     if np.isfinite(cross["omp_vs_cuda_e2e"]):
         ax.axvline(cross["omp_vs_cuda_e2e"], color="k", ls=":", lw=0.8,
                    label=f"crossover {cross['omp_vs_cuda_e2e']:.3g} cells")
@@ -273,6 +268,7 @@ def fig_f10(df: pd.DataFrame, figdir: Path, resdir: Path, title_note: str = "") 
     ax.legend(fontsize=6.5)
     fig.tight_layout()
     fig.savefig(figdir / "fig8.pdf", dpi=150)
+    fig.savefig(figdir / "fig8.png", dpi=200)
     print("F10 written; crossover", cross)
 
 

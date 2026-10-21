@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from rebuild import ROOT, build, fmt_like  # noqa: E402
+from rebuild import ROOT, SIG3, build, fmt_like, fmt_sig3  # noqa: E402
 
 
 def main() -> int:
@@ -33,7 +33,13 @@ def main() -> int:
                 got = "MISSING"
                 status = "FAIL"
             else:
-                got = fmt_like(source["raw"], expected)
+                # The paper states that headline numbers in the text are rounded
+                # to three significant figures. These two rows are that rounding:
+                # Table XIII serial wall 2,470 from 2469.302, and Table XVII
+                # OpenMP CPU energy 4,890 from 4887.96. Every other comparison
+                # still uses the decimal places of the printed string.
+                show = fmt_sig3 if key in SIG3 else fmt_like
+                got = show(source["raw"], expected)
                 status = "PASS" if got == expected else "FAIL"
             note = row.get("note") or (source or {}).get("note") or ""
             line = f"{status}  {row['paper_item']}  {row['quantity']}  printed {expected}  got {got}"

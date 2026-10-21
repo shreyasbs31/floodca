@@ -75,9 +75,11 @@ def write_tables(results):
         tex.write_text("\n".join(lines) + "\n")
     blocked = out / "figure1_blocked.txt"
     blocked.write_text(
-        "Figure 1 is not regenerated. It needs the 90 m DEM, the land mask, "
-        "the observed flood raster and results/e12 count rasters. Those files "
-        "are not in this repository, and this script does not download them.\n"
+        "Figure 1 is drawn by analysis/fig_study.py. It needs the rasters that prep/ "
+        "writes under data/processed/udupi_coast (90 m elevation, land mask, S/M/L "
+        "crop headers, observed flood extent and permanent water for event 2734) "
+        "and the count chunks in results/e12/main. Those downloads are not in this "
+        "repository, and this script does not run fig_study.py.\n"
     )
     return combined
 
